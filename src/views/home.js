@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import "./styles/home.css";
 import { getData } from "../api";
@@ -26,7 +26,6 @@ const Homeview = () => {
   const [details, setDetails] = useState({});
   const [resultShow, setResultShow] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState("");
   const getOptions = async (value) => {
     let data = await getData(`/stocks/search?query=${value}`);
     let _results = searchResult(data, value);
@@ -43,7 +42,6 @@ const Homeview = () => {
   };
   const handleSearch = (value) => {
     getOptions(value);
-    setQuery(value);
   };
 
   const onSelect = (value) => {

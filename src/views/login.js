@@ -9,11 +9,14 @@ const Login = () => {
   const [state, setState] = useState({ email: "", password: "" });
   const history = useHistory();
   useEffect(() => {
+    checkAccess();
+    return () => {};
+  }, []);
+  const checkAccess = () => {
     let isAuthenticated = getAccessToken();
     console.log(isAuthenticated);
     if (isAuthenticated) history.push("/home");
-    return () => {};
-  }, []);
+  };
   const handleKeypress = (e) => {
     const { name, value } = e.target;
     let chunk = { ...state };

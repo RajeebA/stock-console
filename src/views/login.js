@@ -16,7 +16,7 @@ const Login = () => {
     };
     checkAccess();
     return () => {};
-  }, []);
+  }, [history]);
 
   const handleKeypress = (e) => {
     const { name, value } = e.target;

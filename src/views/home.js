@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "./styles/home.css";
 import { getData } from "../api";
-import { AutoComplete, Input, Card, Avatar } from "antd";
-import Meta from "antd/lib/card/Meta";
+import { AutoComplete, Input, Card } from "antd";
 
 const Homeview = () => {
   const { Meta } = Card;
@@ -53,13 +52,9 @@ const Homeview = () => {
   };
 
   const onSelect = (value) => {
-    console.log("onSelect", value);
     getDetails(value);
   };
-  const gridStyle = {
-    width: "25%",
-    textAlign: "center",
-  };
+
   return (
     <Container fluid className="main-content-container p-0 ">
       <div className="card shadow" style={{ height: "100vh" }}>

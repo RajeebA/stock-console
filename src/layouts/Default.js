@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import MainNavbar from "../components/layout/MainNavbar/MainNavbar";

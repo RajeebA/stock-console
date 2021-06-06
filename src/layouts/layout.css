@@ -1,0 +1,10 @@
+.s-title > h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 300;
+  padding: 0 15px 60px;
+  margin-top: -10px;
+  display: inline-block;
+  width: 100%;
+  font: 40px/1.42 "Raleway", Arial, Helvetica, sans-serif;
+}

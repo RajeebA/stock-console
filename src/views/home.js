@@ -27,16 +27,12 @@ const Homeview = () => {
   const [resultShow, setResultShow] = useState(false);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
-  const getOptions = async () => {
-    let data = await getData(`/stocks/search?query=${query}`);
-    let _results = searchResult(data, query);
+  const getOptions = async (value) => {
+    let data = await getData(`/stocks/search?query=${value}`);
+    let _results = searchResult(data, value);
     setOptions(_results);
   };
 
-  useEffect(() => {
-    if (query) getOptions();
-    return () => {};
-  }, [query]);
   const getDetails = async (id) => {
     setLoading(true);
     let data = await getData(`/stocks/details/${id}`);
@@ -46,6 +42,7 @@ const Homeview = () => {
     setDetails(data);
   };
   const handleSearch = (value) => {
+    getOptions(value);
     setQuery(value);
   };
 

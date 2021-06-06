@@ -12,6 +12,9 @@ const Login = () => {
     let isAuthenticated = getAccessToken();
     console.log(isAuthenticated);
     if (isAuthenticated) history.push("/home");
+    return () => {
+      isAuthenticated;
+    };
   }, []);
   const handleKeypress = (e) => {
     const { name, value } = e.target;

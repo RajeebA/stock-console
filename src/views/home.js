@@ -32,12 +32,12 @@ const Homeview = () => {
     let _results = searchResult(data, query);
     setOptions(_results);
   };
+
   useEffect(() => {
     if (query) getOptions();
-    else {
-      setLoading(false);
-      setResultShow(false);
-    }
+    return () => {
+      query;
+    };
   }, [query]);
   const getDetails = async (id) => {
     setLoading(true);

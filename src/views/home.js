@@ -35,9 +35,7 @@ const Homeview = () => {
 
   useEffect(() => {
     if (query) getOptions();
-    return () => {
-      query;
-    };
+    return () => {};
   }, [query]);
   const getDetails = async (id) => {
     setLoading(true);
